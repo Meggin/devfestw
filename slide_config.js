@@ -21,7 +21,7 @@ var SLIDE_CONFIG = {
     name: 'Meggin Kearney',
     gplus: 'http://plus.google.com/1234567890',
     title: 'Technical Writer',
-    company: 'Google Chrome Team',
+    company: 'Google Chrome',
     github: 'https://github.com/Meggin'
   }]
 };

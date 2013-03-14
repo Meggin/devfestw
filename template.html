@@ -80,13 +80,13 @@ URL: https://code.google.com/p/io-2012-slides
       <ul>
         <li>Tech writer for Chrome Apps and Extensions</li>
         <li>Chrome Developer Relations Team</li>
-        <li><img src="http://www.google.com/images/icons/ui/gprofile_button-44.png" width="44" height="44"></a> <a rel="author" data-config-gplus><a href="http://plus.google.com/110573989653316535297"> Meggin Kearney</a></li>
+        <li><img src="http://www.google.com/images/icons/ui/gprofile_button-44.png" width="34" height="34"></a> <a rel="author" data-config-gplus><a href="http://plus.google.com/110573989653316535297"> Meggin Kearney</a></li>
       </ul>
       <h3>Why am I here?</h3>
       <ul>
         <li>Talk about Chrome Apps</li>
         <li>Get you to build your own Chrome Apps</li>
-        <li>Support women in Google Developer Community</li>
+        <li>Support women in developer community</li>
       </ul>
     </article>
   </slide>  
@@ -110,7 +110,7 @@ URL: https://code.google.com/p/io-2012-slides
     </hgroup>
     <article>
       <img src="images/editor.png" width="60%" align="right" class="reflect" alt="Description" title="Description">
-        <p>No traditional browser chrome</p>
+        <p>No browser chrome</p>
         <p>Lives outside the browser</p>
         <p>Main focus on app tasks</p>
         <p>Works offline by default</p>
@@ -186,6 +186,12 @@ URL: https://code.google.com/p/io-2012-slides
         <a href="https://github.com/GoogleChrome/chrome-app-samples/tree/master/media-gallery">media</a>
         stored on a user's device (with user's permission, of course).
       </p>
+      <p><img src="images/chrome-logo-tiny.png" width="24" height="24" alt=""
+        style="margin-top:0" /><b> Serial API: </b>
+        Use <a href="http://www.arduino.cc/">Adruino</a>
+        to create an
+        <a href="https://github.com/GoogleChrome/chrome-app-samples/tree/master/serial/ledtoggle">LED toggle</a>.
+      </p>
     </article>
   </slide>
 
@@ -203,6 +209,18 @@ URL: https://code.google.com/p/io-2012-slides
       <h2>Step 1: Create basic app</h2>
     </hgroup>
     <article class="smaller">
+
+      <ul>
+        <li>The
+        <a href="https://github.com/GoogleChrome/chrome-app-codelab/blob/master/lab2_basic/manifest.json">manifest.json</a> describes meta-informaton about the app.</li>
+        <li>The background script,
+        <a href="https://github.com/GoogleChrome/chrome-app-codelab/blob/master/lab2_basic/main.js"></a>,
+        sets up how your app responds to system events.</li>
+        <li>The view,
+        <a href="https://github.com/GoogleChrome/chrome-app-codelab/blob/master/lab2_basic/index.html">index.html</a>,
+        is what your user sees.</li>
+      </ul>
+
       <pre class="prettyprint" data-lang="manifest.json">
 {
   "manifest_version": 2,
@@ -228,7 +246,7 @@ chrome.app.runtime.onLaunched.addListener(function() {
       &lt;title>Hello DevFestW</title>
   &lt;/head>
   &lt;body>
-      &lt;h1>Hello, DevFestW!</h1>
+      &lt;h1>Hello, DevFestW!&lt;/h1>
   &lt;/body>
 &lt;/html>
 </pre>
@@ -432,6 +450,8 @@ $scope.showUri = function(uri) {
       <h2>Step 6: Create multiple views</h2>
     </hgroup>
     <article class="smaller">
+      
+      <p>Create second view:</p>
       <ul>
         <li>Remove the droptext <code>div</code> from <a href="https://github.com/GoogleChrome/chrome-app-codelab/blob/master/lab9_multipleviews/angularjs/index.html">index.html</a>.</li>
         <li>Create a new view with the drop area: <a href="https://github.com/GoogleChrome/chrome-app-codelab/blob/master/lab9_multipleviews/angularjs/droparea.html">droparea.html</a>:</li>
@@ -451,23 +471,15 @@ $scope.showUri = function(uri) {
 &lt;/html>
 </pre>  
 
+    <p>Update Javascript:</p>
     <ul>
       <li>Move all drop-related functionality from
         <a href="https://github.com/GoogleChrome/chrome-app-codelab/blob/master/lab9_multipleviews/angularjs/controller.js">controller.js</a>
         to a new file,
-        <a href="https://github.com/GoogleChrome/chrome-app-codelab/blob/master/lab9_multipleviews/angularjs/droparea.js">droparea.js</a>:</li>
+        <a href="https://github.com/GoogleChrome/chrome-app-codelab/blob/master/lab9_multipleviews/angularjs/droparea.js">droparea.js</a>.</li>
+      <li>In the <a href="https://github.com/GoogleChrome/chrome-app-codelab/blob/master/lab9_multipleviews/angularjs/controller.js">controller.js</a>,
+      add the call to create a new window:</li>
     </ul>
-
-<pre class="prettyprint" data-lang="droparea.js">
-function DropCtrl($scope) {
-  // move here the variable initializations for defaultDropText and $scope.dropText
-  // move here the methods dragOver, dragLeave and drop
-}
-</pre>   
-      <ul>
-        <li>In the <a href="https://github.com/GoogleChrome/chrome-app-codelab/blob/master/lab9_multipleviews/angularjs/controller.js">controller.js</a>,
-          add the call to create a new window:</li>
-      </ul>
 
 <pre class="prettyprint" data-lang="controller.js">
 chrome.app.window.create('droparea.html',
@@ -521,7 +533,7 @@ chrome.app.window.create('droparea.html',
       <h2>Yay, we're done</h2>
     </hgroup>
     <article>
-      <img src="images/done.png" width="50%" align="middle" class="reflect" alt="Description" title="Description">
+      <img src="images/done.png" width="47%" align="middle" class="reflect" alt="Description" title="Description">
     </article>
   </slide>
 
@@ -542,28 +554,15 @@ chrome.app.window.create('droparea.html',
       <h2>What developers want</h2>
     </hgroup>
     <article>
-      <p><img src="images/chrome-logo-tiny.png" width="24" height="24" alt=""
-      style="margin-top:0" />
-      Ability to authenticate apps-- move <a href="http://developer.chrome.com/trunk/apps/experimental.identity.html">Identity API</a> out of experimental</p>
-      <p><img src="images/chrome-logo-tiny.png" width="24" height="24" alt=""
-      style="margin-top:0" />
-      Read the contents of a directory (especially when using
-      <a href="http://developer.chrome.com/trunk/apps/mediaGalleries.html">Media Galleries API</a>)</p>
-      <p><img src="images/chrome-logo-tiny.png" width="24" height="24" alt=""
-      style="margin-top:0" />
-      Serious (and simple) monetization and distribution mechanisms</p>
-      <p><img src="images/chrome-logo-tiny.png" width="24" height="24" alt=""
-      style="margin-top:0" />
-      Cross-platform support for Bluetooth, Rich Notifications, App Launcher</p>
-      <p><img src="images/chrome-logo-tiny.png" width="24" height="24" alt=""
-      style="margin-top:0" />
-      Clear understanding of what is a Chrome app (and what it isn't)</p>
-      <p><img src="images/chrome-logo-tiny.png" width="24" height="24" alt=""
-      style="margin-top:0" />
-      Better testing story</p>
-      <p><img src="images/chrome-logo-tiny.png" width="24" height="24" alt=""
-      style="margin-top:0" />
-      Cohesive understanding of storage options</p>
+      <ul>
+        <li>Ability to authenticate apps</li>
+        <li>Read the contents of a directory</li>
+        <li>Effective monetization and distribution</li>
+        <li>Cross-platform support</li>
+        <li>Clarity on what is a Chrome app (and what isn't it)</li>
+        <li>Better testing story</li>
+        <li>Cohestive understanding of storage options</li>
+      </ul>
     </article>
   </slide>
 
@@ -600,8 +599,10 @@ chrome.app.window.create('droparea.html',
         <li>Chrome Apps <a href="http://developer.chrome.com/trunk/apps/about_apps.html">developer docs</a></li>
         <li>Chrome Apps <a href="http://chrome-api.storage.googleapis.com/index.html">plugin for Sublime</a></li>
         <li>Todo list <a href="https://github.com/GoogleChrome/chrome-app-codelab">codelab source</a></li>
-        <li>Inspect and debug apps using Chrome Developer Tools just like any standard web page.</li>
+        <li>Chrome Apps <a href="https://developers.google.com/live/chrome/">Google Developer Live Sessions</a></li>
+        <li>Chrome Developer Tools: inspect and debug just like any standard web page.</li>
       </ul>
+
     </article>
   </slide>
 

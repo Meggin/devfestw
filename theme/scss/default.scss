@@ -225,6 +225,15 @@ slides > slide {
     p {
       margin-bottom: 1em;
     }
+
+    p.warning {
+      margin: 1em 0 0 0;
+      padding: .2em .5em .2em .9em;
+      background-color: #F5F5F5;
+      border-top: 1px solid;
+      border-bottom: 1px solid;
+      overflow: hidden;
+}
   }
 
   > article:only-child {
