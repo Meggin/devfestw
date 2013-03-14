@@ -1,0 +1,643 @@
+<!--
+Google IO 2012 HTML5 Slide Template
+
+Authors: Eric Bidelman <ebidel@gmail.com>
+         Luke Mahé <lukem@google.com>
+
+URL: https://code.google.com/p/io-2012-slides
+-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Testing</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">-->
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+  <!--This one seems to work all the time, but really small on ipad-->
+  <!--<meta name="viewport" content="initial-scale=0.4">-->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="stylesheet" media="all" href="theme/css/default.css">
+  <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="theme/css/phone.css">
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
+  <script data-main="js/slides" src="js/require-1.0.8.min.js"></script>
+</head>
+<body style="opacity: 0">
+
+<slides class="layout-widescreen">
+
+  <slide class="logoslide nobackground">
+    <article class="flexbox vcenter">
+      <span><img src="images/google_developers_logo.png"></span>
+    </article>
+  </slide>
+
+  <slide class="title-slide segue nobackground">
+    <aside class="gdbar"><img src="images/chrome_logo.png"></aside>
+    <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
+    <hgroup class="auto-fadein">
+      <h1 data-config-title><!-- populated from slide_config.json --></h1>
+      <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
+      <p data-config-presenter><!-- populated from slide_config.json --></p>
+    </hgroup>
+  </slide>
+
+<slide>
+    <aside class="note">
+      <section>
+        <ul>
+          <li>Who: Most writers in Google are engineers who love to write,
+            and make their passion their daily work;
+            I'm more the reverse--
+            a writer who loves to figure things out.
+            I've also been told I'm not very good at hearing the word 'no'-- this usually leads me to try and figure out and hack the code myself.</li>
+          <li>Why: Since becoming a mom to at least one daughter,
+            I've been inspired and driven to be more.
+            I've also found myself all the more aware of how hard it is
+            for women in technology today, and how important it is for us
+            to work together to change it.
+            Preparing for this presentation,
+            I've been thinking about why there aren't more women coders--
+            and that maybe by understanding this a bit better,
+            we might see opportunities for encouraging more women to get involved.
+            We need to stop believing in the myth that success comes from some intrinsic,
+            not-so-easy-to-measure natural ability.
+            All the best things in my life have come from hard work, drive,
+            curiousity, the freedome to be creative, and the learned skill of iteration.
+            We also need to give each other the tools and encouragement
+            needed to iterate and create.
+            *** Variable story ***
+          </li>
+        </ul>
+      </section>
+    </aside>
+    <hgroup>
+      <h2>About me</h2>
+    </hgroup>
+    <article>
+      <img src="images/mkearney.png" width="40%" align="right" class="reflect" alt="Description" title="Description">
+      <h3>Who am I?</h3>
+      <ul>
+        <li>Tech writer for Chrome Apps and Extensions</li>
+        <li>Chrome Developer Relations Team</li>
+        <li><img src="http://www.google.com/images/icons/ui/gprofile_button-44.png" width="44" height="44"></a> <a rel="author" data-config-gplus><a href="http://plus.google.com/110573989653316535297"> Meggin Kearney</a></li>
+      </ul>
+      <h3>Why am I here?</h3>
+      <ul>
+        <li>Talk about Chrome Apps</li>
+        <li>Get you to build your own Chrome Apps</li>
+        <li>Support women in Google Developer Community</li>
+      </ul>
+    </article>
+  </slide>  
+
+  <slide>
+    <hgroup>
+      <h2>5 things you'll learn</h2>
+    </hgroup>
+    <article class="build">
+      <p>How Chrome Apps look and behave</p>
+      <p>What technologies are used to build them</p>
+      <p>What really cool stuff you can build</p>
+      <p>How to build your own app</p>
+      <p>What we're still figuring out</p>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Native appearance and behavior</h2>
+    </hgroup>
+    <article>
+      <img src="images/editor.png" width="60%" align="right" class="reflect" alt="Description" title="Description">
+        <p>No traditional browser chrome</p>
+        <p>Lives outside the browser</p>
+        <p>Main focus on app tasks</p>
+        <p>Works offline by default</p>
+        <p>User controls app lifecycle</p>
+    </article>
+  </slide>
+
+    <slide>
+    <hgroup>
+      <h2>Launch locally</h2>
+      <img src="images/app-launcher.png" width="45%" align="right" class="reflect" alt="Description" title="Description">
+    </hgroup>
+    <article>
+      <h3>The App Launcher:</h3>
+      <ul>
+        <li>Works on ChromeOS and Windows</li>
+      <li>Mac OSX and Linux coming soon</li>
+      </ul>
+      <h3>Let's launch some apps now...</h3> 
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Web development with key changes</h2>
+    </hgroup>
+    <article>
+      <h3>Web platform support</h3>
+      <ul>
+        <li>Write apps in HTML, Javascript, and CSS3</li>
+        <li>Install once and works across platforms</li>
+        <li>Automatic updates</li>
+        <li>Web security</li>
+      </ul>
+      <h3>Key differences</h3>
+      <ul>
+        <li>Disabled 'browser' features</li>
+        <li>Serious Content Security Policy</li>
+        <li>Use &#60;webview> tag instead of &#60;iframe></li>
+        <li>Access to capabilities normally forbidden to web apps</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Build cool apps with Chrome APIs</h2>
+    </hgroup>
+    <article>
+      <p><img src="images/chrome-logo-tiny.png" width="24" height="24" alt=""
+        style="margin-top:0" /><b> Network Sockets API: </b>
+        Fly a
+        <a href="https://github.com/GoogleChrome/chrome-app-samples/tree/master/parrot-ar-drone">Parrot AR.Drone</a>.
+      </p>
+      <br>
+      <p><img src="images/chrome-logo-tiny.png" width="24" height="24" alt=""
+        style="margin-top:0" /><b> File System APIs: </b>
+        Import music from desktop to
+      <a href="https://github.com/agektmr/ChromeMusicPlayer">music player</a>
+      AND sync across clients using Google Drive.
+      </p>
+      <br>
+      <p><img src="images/chrome-logo-tiny.png" width="24" height="24" alt=""
+        style="margin-top:0" /><b> Alarms and Notifications APIs: </b>
+        Set an alarm and send
+        <a href="https://github.com/GoogleChrome/chrome-app-samples/tree/master/rich-notifications">notifications</a>
+        to user's system tray.
+      </p>
+      <br>
+      <p><img src="images/chrome-logo-tiny.png" width="24" height="24" alt=""
+        style="margin-top:0" /><b> Media Gallery API: </b>
+        Access
+        <a href="https://github.com/GoogleChrome/chrome-app-samples/tree/master/media-gallery">media</a>
+        stored on a user's device (with user's permission, of course).
+      </p>
+    </article>
+  </slide>
+
+    <slide>
+    <hgroup>
+      <h2>Ready to build our own app</h2>
+    </hgroup>
+    <article>
+      <img src="images/todo-list.png" width="50%" alt="Description" title="Description">
+    </article>
+  </slide>
+
+   <slide>
+    <hgroup>
+      <h2>Step 1: Create basic app</h2>
+    </hgroup>
+    <article class="smaller">
+      <pre class="prettyprint" data-lang="manifest.json">
+{
+  "manifest_version": 2,
+  "name": "My first app",
+  "version": "1",
+  "app": {
+    "background": {
+      "scripts": ["main.js"]
+    }
+  }
+}
+</pre>
+<pre class="prettyprint" data-lang="main.js">
+chrome.app.runtime.onLaunched.addListener(function() {
+    chrome.app.window.create('index.html',
+      {width: 500, height: 309});
+  });
+</pre>
+<pre class="prettyprint" data-lang="index.html">
+&lt;html>
+  &lt;head>
+      &lt;meta charset="utf-8">
+      &lt;title>Hello DevFestW</title>
+  &lt;/head>
+  &lt;body>
+      &lt;h1>Hello, DevFestW!</h1>
+  &lt;/body>
+&lt;/html>
+</pre>
+    </article>
+  </slide>
+
+     <slide>
+    <hgroup>
+      <h2>Step 2: Create model-view-controller</h2>
+    </hgroup>
+    <article class="smaller">
+      <ul>
+        <li>Download <a href="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.min.js">Angular script</a> and
+          save it as <a href="https://github.com/GoogleChrome/chrome-app-codelab/blob/master/lab3_mvc/angularjs/simpleview/angular.min.js">angular.min.js</a>.</li>
+        <li>Add a simple stylesheet: <a href="https://github.com/GoogleChrome/chrome-app-codelab/blob/master/lab3_mvc/angularjs/simpleview/todo.css">todo.css</a></li>
+        <li>Change your <a href="https://github.com/GoogleChrome/chrome-app-codelab/blob/master/lab3_mvc/angularjs/withcontroller/index.html">index.html</a>
+          to use Angular and new controller.</li>
+          <li>Add the controller:</li>
+      </ul>
+      <pre class="prettyprint" data-lang="controller.js">
+function TodoCtrl($scope) {
+  $scope.todos = [
+    {text:'learn angular', done:true},
+    {text:'build an angular app', done:false}];
+ 
+  $scope.addTodo = function() {
+    $scope.todos.push({text:$scope.todoText, done:false});
+    $scope.todoText = '';
+  };
+ 
+  $scope.remaining = function() {
+    var count = 0;
+    angular.forEach($scope.todos, function(todo) {
+      count += todo.done ? 0 : 1;
+    });
+    return count;
+  };
+ 
+  $scope.archive = function() {
+    var oldTodos = $scope.todos;
+    $scope.todos = [];
+    angular.forEach(oldTodos, function(todo) {
+      if (!todo.done) $scope.todos.push(todo);
+    });
+  };
+}
+</pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Step 3: Save and fetch data</h2>
+    </hgroup>
+    <article class="smaller">
+      <ul>
+        <li>Request permission to use storage in your <a href="https://github.com/GoogleChrome/chrome-app-codelab/blob/master/lab5_data/angularjs/1_storage_sync/manifest.json">manifest.json</a>.</li>
+        <li>Change your <a href="https://github.com/GoogleChrome/chrome-app-codelab/blob/master/lab5_data/angularjs/1_storage_sync/controller.js">controller.js</a> to get the Todo list from syncable storage:</li>
+      </ul>
+
+<pre class="prettyprint" data-lang="controller.js">
+// Notice that chrome.storage.sync.get is asynchronous
+chrome.storage.sync.get('todolist', function(value) {
+  // The $apply is only necessary to execute the function inside Angular scope
+  $scope.$apply(function() {
+    $scope.load(value);
+  });
+});
+
+// If there is saved data in storage, use it. Otherwise, bootstrap with sample todos
+$scope.load = function(value) {
+  if (value && value.todolist) {
+    $scope.todos = value.todolist;
+  } else {
+    $scope.todos = [
+      {text:'learn angular', done:true},
+      {text:'build an angular app', done:false}];
+  }
+} 
+
+$scope.save = function() {
+  chrome.storage.sync.set({'todolist': $scope.todos});
+};
+</pre>        
+      <ul>
+        <li>Update <a href="https://github.com/GoogleChrome/chrome-app-codelab/blob/master/lab5_data/angularjs/1_storage_sync/index.html">index.html</a>
+          to call <code>save()</code> whenever data changes.</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Step 4: Manage app lifecycle</h2>
+    </hgroup>
+    <article class="smaller">
+      <p>Let's change our app to save Todo items in
+        <a href="http://developer.chrome.com/trunk/apps/storage.html">storage</a>
+        only if the <a href="http://developer.chrome.com/trunk/apps/app.runtime.html#event-onRestarted">onRestarted event</a> is fired.</p>
+      <ul>
+        <li>Change <a href="">main.js</a> to listen for <code>onRestarted</code> event:</li>
+      </ul>
+
+<pre class="prettyprint" data-lang="main.js">
+chrome.app.runtime.onLaunched.addListener(function() {
+  // normal launch initiated by the user, let's start clean.
+  runApp(false);
+});
+
+chrome.app.runtime.onRestarted.addListener(function() {
+  // if restarted, try to get the transient saved state
+  runApp(true);
+});
+
+function runApp(readInitialState) {
+  chrome.app.window.create('index.html',
+    {id: 'mainwindow', width: 500, height: 309},
+    // the create callback gets a reference to the AppWindow obj 
+    function(win) {
+      // when the callback is executed, the DOM is loaded but no script was
+      // loaded yet. So, let's attach to the load event.
+      win.contentWindow.addEventListener('load', function() {
+        if (readInitialState) {
+          win.contentWindow.setInitialState();
+        } else {
+          win.contentWindow.clearInitialState();
+        }
+      });
+    });
+}
+</pre> 
+
+<ul>
+  <li>Update
+    <a href="https://github.com/GoogleChrome/chrome-app-codelab/blob/master/lab6_lifecycle/angularjs/controller.js">controller.js</a>
+    to only store a new Todo item when <code>onRestarted</code> event fired.</li>
+</ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Step 5: Access resources from the web</h2>
+    </hgroup>
+    <article class="smaller">
+      <p>Now we will change our app to render the content of URLs in a WebView
+        when a user clicks on a link.
+      </p>
+      <p>
+        First, we need to follow these
+        <a href="http://developer.chrome.com/trunk/apps/app_codelab5_data.html#handle_drag_and_dropped_files_and_urls">codelab instructions</a> to add drag-and-dropped support.
+      </p>
+      <ul>
+        <li>Request a new permission, "webview", in the <a href="https://github.com/GoogleChrome/chrome-app-codelab/blob/master/lab8_webresources/angularjs/1_webview/manifest.json">manifest.json</a>.</li>
+        <li>Add a &lt;webview> tag and lik to <a href="https://github.com/GoogleChrome/chrome-app-codelab/blob/master/lab8_webresources/angularjs/1_webview/index.html">index.html</a>:</li>
+      </ul>
+<pre class="prettyprint" data-lang="index.html">
+&lt;!-- in TODO item: -->
+&lt;a ng-show="todo.uri" href="" ng-click="showUri(todo.uri)">(view url)</a>
+&lt;!-- at the bottom, below the end of body: -->
+&lt;webview>&lt;/webview>
+</pre> 
+      
+      <ul>
+        <li>Set an appropriate width and height to the webview tag in
+          <a href="https://github.com/GoogleChrome/chrome-app-codelab/blob/master/lab8_webresources/angularjs/1_webview/todo.css">todo.css</a>:</li>
+      </ul>
+
+<pre class="prettyprint" data-lang="todo.css">
+webview {
+  width: 100%;
+  height: 200px;
+}
+</pre> 
+      
+      <ul>
+        <li>Add a new method to
+          <a href="https://github.com/GoogleChrome/chrome-app-codelab/blob/master/lab8_webresources/angularjs/1_webview/controller.js">controller.js</a>
+          to show the <webview> content:</li>
+      </ul>
+
+<pre class="prettyprint" data-lang="controller.js">
+$scope.showUri = function(uri) {
+  var webview=document.querySelector("webview");
+  webview.src=uri;
+};
+</pre> 
+
+  </article>
+</slide>
+
+ <slide>
+    <aside class="note">
+      <section>
+        <ul>
+          <li>In this step, we will move the drop area out of our app to another window.</li>
+        </ul>
+      </section>
+    </aside>
+    <hgroup>
+      <h2>Step 6: Create multiple views</h2>
+    </hgroup>
+    <article class="smaller">
+      <ul>
+        <li>Remove the droptext <code>div</code> from <a href="https://github.com/GoogleChrome/chrome-app-codelab/blob/master/lab9_multipleviews/angularjs/index.html">index.html</a>.</li>
+        <li>Create a new view with the drop area: <a href="https://github.com/GoogleChrome/chrome-app-codelab/blob/master/lab9_multipleviews/angularjs/droparea.html">droparea.html</a>:</li>
+      </ul>
+<pre class="prettyprint" data-lang="droparea.html">
+&lt;html ng-app ng-csp>
+  &lt;head>
+    &lt;script src="angular.min.js"></script>
+    &lt;script src="droparea.js"></script>
+    &lt;link rel="stylesheet" href="todo.css">
+    &lt;title>File Drop</title>
+  &lt;/head>
+  &lt;body ng-controller="DropCtrl" ng-class="dropClass">
+    &lt;h2>Drop Area</h2>
+    &lt;div>{{dropText}}</div>
+  &lt;/body>
+&lt;/html>
+</pre>  
+
+    <ul>
+      <li>Move all drop-related functionality from
+        <a href="https://github.com/GoogleChrome/chrome-app-codelab/blob/master/lab9_multipleviews/angularjs/controller.js">controller.js</a>
+        to a new file,
+        <a href="https://github.com/GoogleChrome/chrome-app-codelab/blob/master/lab9_multipleviews/angularjs/droparea.js">droparea.js</a>:</li>
+    </ul>
+
+<pre class="prettyprint" data-lang="droparea.js">
+function DropCtrl($scope) {
+  // move here the variable initializations for defaultDropText and $scope.dropText
+  // move here the methods dragOver, dragLeave and drop
+}
+</pre>   
+      <ul>
+        <li>In the <a href="https://github.com/GoogleChrome/chrome-app-codelab/blob/master/lab9_multipleviews/angularjs/controller.js">controller.js</a>,
+          add the call to create a new window:</li>
+      </ul>
+
+<pre class="prettyprint" data-lang="controller.js">
+chrome.app.window.create('droparea.html',
+  {id: 'dropArea', width: 200, height: 200 },
+  function(dropWin) {
+    dropWin.contentWindow.$parentScope = $scope; 
+  });
+</pre>    
+
+  </article>
+</slide>
+
+  <slide>
+    <aside class="note">
+      <section>
+        <ul>
+          <li>Required assets and info: icon to display in store, small tile icon displayed on store wall,
+            description, screenshot or video, primary category where your app is listed.</li>
+          <li>Important message displayed when you publish:
+            During the developer preview, new packaged apps will not show up
+            when users browse categories or search in the store.
+            You can share your app by sharing it's link.
+            This link will work for any user that has it.</li>
+        </ul>
+      </section>
+    </aside>
+    <hgroup>
+      <h2>Load, launch, and publish<img src="images/chromewebstore.png" align="right" class="reflect" alt="Description" title="Description"></h2>
+    </hgroup>
+    <article>
+      <h3>Load app:</h3>
+      <ul>
+        <li>Open the apps and extensions management page.</li>
+        <li>Load your app: <button>Load unpacked extension...</button></li>
+        <li>Launch app for the first time from the management page.</li>
+        <li>Now try launching the app from the app launcher.</li>
+      </ul>
+      <h3>Publish in Chrome Web Store:</h3>
+      <ul>
+        <li>Open the Chrome Web Store developer dashboard.</li>
+        <li>Compress your app: <button>Choose file</button></li>
+        <li>Upload your app: <button>Upload</button></li>
+        <li>Add the required assets and meta information.</li>
+        <li>Publish your app: <button>Publish Changes</button></li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Yay, we're done</h2>
+    </hgroup>
+    <article>
+      <img src="images/done.png" width="50%" align="middle" class="reflect" alt="Description" title="Description">
+    </article>
+  </slide>
+
+  <slide class="segue dark quote nobackground">
+    <aside class="gdbar right bottom"><img src="images/google_developers_icon_128.png"></aside>
+    <article class="flexbox vleft auto-fadein">
+      <q>
+        From then on, when anything went wrong with a computer, we said it had bugs in it.
+      </q>
+      <div class="author">
+        --Grace Hopper
+      </div>
+    </article>
+  </slide> 
+
+   <slide>
+    <hgroup>
+      <h2>What developers want</h2>
+    </hgroup>
+    <article>
+      <p><img src="images/chrome-logo-tiny.png" width="24" height="24" alt=""
+      style="margin-top:0" />
+      Ability to authenticate apps-- move <a href="http://developer.chrome.com/trunk/apps/experimental.identity.html">Identity API</a> out of experimental</p>
+      <p><img src="images/chrome-logo-tiny.png" width="24" height="24" alt=""
+      style="margin-top:0" />
+      Read the contents of a directory (especially when using
+      <a href="http://developer.chrome.com/trunk/apps/mediaGalleries.html">Media Galleries API</a>)</p>
+      <p><img src="images/chrome-logo-tiny.png" width="24" height="24" alt=""
+      style="margin-top:0" />
+      Serious (and simple) monetization and distribution mechanisms</p>
+      <p><img src="images/chrome-logo-tiny.png" width="24" height="24" alt=""
+      style="margin-top:0" />
+      Cross-platform support for Bluetooth, Rich Notifications, App Launcher</p>
+      <p><img src="images/chrome-logo-tiny.png" width="24" height="24" alt=""
+      style="margin-top:0" />
+      Clear understanding of what is a Chrome app (and what it isn't)</p>
+      <p><img src="images/chrome-logo-tiny.png" width="24" height="24" alt=""
+      style="margin-top:0" />
+      Better testing story</p>
+      <p><img src="images/chrome-logo-tiny.png" width="24" height="24" alt=""
+      style="margin-top:0" />
+      Cohesive understanding of storage options</p>
+    </article>
+  </slide>
+
+     <slide>
+    <hgroup>
+      <h2>What about mobile?</h2>
+    </hgroup>
+    <article>
+      <h3>Cordova + Chrome</h3>
+      <ul>
+        <li>Chrome-Cordova 
+        <a href="https://github.com/MobileChromeApps/chrome-cordova/commits/master">github repository</a></li>
+        <li>Improving performance is key.</li>
+      </ul>
+      <h3>Doc improvements:</h3>
+      <ul>
+        <li>Integrate codelab in docs and cover both AngularJS and Javascript.</li>
+        <li>Identify common use cases for windows and write 'how-tos'.</li>
+        <li>Improve documentation around app events and app lifecycle.</li>
+      </ul>
+      <h3>More feedback please:
+      <a href="https://groups.google.com/a/chromium.org/forum/?fromgroups#!forum/chromium-apps">chromium-apps group</a>
+      </h3>
+    </article>
+  </slide>
+
+    <slide>
+    <hgroup>
+      <h2>Tools and resources</h2>
+    </hgroup>
+    <article>
+      <ul>
+        <li>Chrome Apps <a href="https://github.com/GoogleChrome/chrome-app-samples">samples repository</a></li>
+        <li>Chrome Apps <a href="http://developer.chrome.com/trunk/apps/about_apps.html">developer docs</a></li>
+        <li>Chrome Apps <a href="http://chrome-api.storage.googleapis.com/index.html">plugin for Sublime</a></li>
+        <li>Todo list <a href="https://github.com/GoogleChrome/chrome-app-codelab">codelab source</a></li>
+        <li>Inspect and debug apps using Chrome Developer Tools just like any standard web page.</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide class="thank-you-slide segue nobackground">
+    <aside class="gdbar right"><img src="images/google_developers_icon_128.png"></aside>
+    <article class="flexbox vleft auto-fadein">
+      <h2>&lt;Thank You!&gt;</h2>
+      <p>Source: https://github.com/Meggin/devfestw</p>
+    </article>
+  </slide>
+
+  <slide class="logoslide dark nobackground">
+    <article class="flexbox vcenter">
+      <span><img src="images/google_developers_logo_white.png"></span>
+    </article>
+  </slide>
+
+  <slide class="backdrop"></slide>
+
+</slides>
+
+<script>
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-XXXXXXXX-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+<!--[if IE]>
+  <script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+  <script>CFInstall.check({mode: 'overlay'});</script>
+<![endif]-->
+</body>
+</html>
